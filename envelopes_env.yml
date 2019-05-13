@@ -1,0 +1,14 @@
+name: envelopes_env
+channels:
+  - conda-forge
+  - defaults
+  - mro
+dependencies:
+  - python=3.7.*
+  - pandas=0.23.*
+  - matplotlib=3.0.*
+  - jupyter
+  - jupyterlab
+  - pip=19.0.*
+  - cairo
+  - pycairo
