@@ -12,3 +12,4 @@ dependencies:
   - pip=19.0.*
   - cairo
   - pycairo
+  - imageio

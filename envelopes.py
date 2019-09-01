@@ -3,7 +3,8 @@ import pandas as pd
 
 def write_envelopes(export_file, from_addr, to_addrs, font='Helvetica', fontsize_from_addr=8,
                     fontsize_to_addrs=14,page_width=6.25, page_height=4.25,
-                    inches_to_points=72, margin=.25):
+                    inches_to_points=72, margin=.25, horiz_align=2.25,
+                    vert_align=2):
     """The purpose of this function is to export a pdf where each page is an envelope
     with a to and from address - modified: https://github.com/evmar/envelope/blob/master/envelope.py
 
@@ -50,8 +51,8 @@ def write_envelopes(export_file, from_addr, to_addrs, font='Helvetica', fontsize
 
         for i, line in enumerate(to_addr):
             cr.set_font_size(fontsize_to_addrs)
-            cr.move_to(2.25 * inches_to_points,
-                       (2 * inches_to_points) + fontsize_to_addrs+2 + ((fontsize_to_addrs+2) * i))
+            cr.move_to(horiz_align * inches_to_points,
+                       (vert_align * inches_to_points) + fontsize_to_addrs+2 + ((fontsize_to_addrs+2) * i))
             cr.show_text(line)
         cr.show_page()
 
